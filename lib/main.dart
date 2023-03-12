@@ -1,3 +1,4 @@
+import 'package:app_fluttercamp/constants.dart';
 import 'package:app_fluttercamp/screens/home_sreen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,9 +15,18 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
-          primaryColor: Colors.white,
-          scaffoldBackgroundColor: Colors.white,
+          primarySwatch: Colors.red,
+          primaryColor: StyleApp.primaryColor,
+          scaffoldBackgroundColor: StyleApp.backgroundColor,
+          appBarTheme: const AppBarTheme(
+            titleTextStyle: TextStyle(
+              color: StyleApp.primaryColor,
+              fontFamily: "Nunito",
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          fontFamily: "monserrat",
         ),
         home: const HomeScreen());
   }

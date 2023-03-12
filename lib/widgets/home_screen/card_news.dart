@@ -8,7 +8,7 @@ class CardNews extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 15),
+      margin: const EdgeInsets.only(bottom: 20),
       alignment: Alignment.centerLeft,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -26,7 +26,13 @@ class CardNews extends StatelessWidget {
                 ),
               ),
             ),
-            const Text("CNN en Espeñol"),
+            const SizedBox(
+              height: 10,
+            ),
+            const Text(
+              "CNN en Espeñol",
+              style: TextStyle(fontWeight: FontWeight.w600),
+            ),
             const Text(
               "Este es un articulo de prueba para probar el tamaño del texto",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
