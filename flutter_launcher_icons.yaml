@@ -1,0 +1,9 @@
+flutter_icons:
+  image_path: "assets/img/icon-app.png"
+  android: true
+  ios: true
+  # web: true
+  remove_alpha_ios: true
+  adaptive_icon_background: "#FFFFFF"
+# instalación  
+# -> flutter packages pub run flutter_launcher_icons:main
