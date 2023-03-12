@@ -1,7 +1,10 @@
+import 'package:app_fluttercamp/models/info_server.dart';
 import 'package:flutter/material.dart';
 
 class CardNews extends StatelessWidget {
+  final Article article;
   const CardNews({
+    required this.article,
     super.key,
   });
 
@@ -17,27 +20,26 @@ class CardNews extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: const FadeInImage(
-                placeholder: AssetImage("assets/img/salud.png"),
-                image: NetworkImage(
-                  "https://www.isdi.education/uploads/media/21-9-medium/07/557-meme_marketing_0.webp?v=1-0",
+            if (article.urlToImage != null && article.urlToImage != "")
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: FadeInImage(
+                  placeholder: const AssetImage("assets/img/salud.png"),
+                  image: NetworkImage(article.urlToImage!),
                 ),
               ),
-            ),
             const SizedBox(
               height: 10,
             ),
-            const Text(
-              "CNN en Espeñol",
-              style: TextStyle(fontWeight: FontWeight.w600),
+            Text(
+              article.source.name,
+              style: const TextStyle(fontWeight: FontWeight.w600),
             ),
-            const Text(
-              "Este es un articulo de prueba para probar el tamaño del texto",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            Text(
+              article.title,
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
-            const Text("Hace 8 horas"),
+            Text(article.publishedAt.toIso8601String()),
           ]),
     );
   }
